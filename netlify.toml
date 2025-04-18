@@ -1,0 +1,4 @@
+
+[[plugins]]
+# Installs the Next.js Build Plugin
+package = "@netlify/plugin-nextjs"
