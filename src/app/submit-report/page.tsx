@@ -34,7 +34,7 @@ const SubmitReport = () => {
       }
     } catch (error) {
       toast.warning("Submission Error", {
-        description: "An unexpected error occurred. Please try again.",
+        description: "An unexpected error occurred. Please try again. " + error,
       });
     } finally {
       setIsSubmitting(false);
@@ -80,8 +80,9 @@ const SubmitReport = () => {
 
           <div className="mb-8">
             <p className="text-gray-300">
-              Use this form to submit your NGO's monthly activities report. All
-              fields are required.
+              Use this form to submit your NGO&apos;s monthly activities report.
+              All fields are required. Don&apos;t worry if you&apos;ve already
+              submitted a report for this month.
             </p>
           </div>
           <Toaster position="top-right" expand={true} richColors />

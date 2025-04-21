@@ -1,5 +1,5 @@
 import { supabase } from "@/supabase/client";
-import { ReportFormData, DashboardStatsResponse } from "@/types/reports";
+import { ReportFormData } from "@/types/reports";
 
 export async function submitReport(data: ReportFormData) {
   try {

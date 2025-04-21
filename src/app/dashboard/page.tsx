@@ -7,6 +7,7 @@ import StatsCard from "@/app/components/StatsCard";
 import NGOReportList from "@/app/components/NGOReportList";
 import { SparklesCore } from "@/app/components/ui/sparkles";
 import Link from "next/link";
+import { toast } from "sonner";
 
 export default function Dashboard() {
   const [stats, setStats] = useState<DashboardStats>({
@@ -56,8 +57,10 @@ export default function Dashboard() {
         if (reportsResult.success && reportsResult.data) {
           setReports(reportsResult.data);
         }
-      } catch (err) {
-        setError("Failed to load data");
+      } catch (error) {
+        toast.error("Failed to fetch reports", {
+          description: `There was an error loading the reports. Please try again. ${error}`,
+        });
       } finally {
         setLoading(false);
       }
