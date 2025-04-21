@@ -1,6 +1,6 @@
-import { GlowEffectButton } from "@/components/landing-page/glowing-button";
+import { GlowEffectButton } from "@/app/components/landing-page/glowing-button";
 import Link from "next/link";
-import { SparklesCore } from "@/components/ui/sparkles";
+import { SparklesCore } from "@/app/components/ui/sparkles";
 
 export default function Home() {
   return (
@@ -23,7 +23,7 @@ export default function Home() {
             Welcome to NGO Helper!
           </h1>
           <div className="mt-4 ">
-            <Link href="/submit">
+            <Link href="/submit-report">
               <GlowEffectButton />
             </Link>
           </div>
