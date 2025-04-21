@@ -121,12 +121,11 @@ const ReportForm = ({ onSubmit, isSubmitting }: ReportFormProps) => {
             name="funds_utilized"
             required
             min="0"
-            step="0.01"
             value={formData.funds_utilized}
             onChange={handleChange}
             onFocus={handleFocus}
             className={inputClassName}
-            placeholder="0.00"
+            placeholder="0"
           />
         </div>
       </div>

@@ -37,7 +37,7 @@ export default function NGOReportList({ reports }: NGOReportListProps) {
                   <div>
                     <p className="text-gray-400 text-sm mb-2">Funds Utilized</p>
                     <p className="text-white text-2xl font-bold">
-                      ₹{report.funds_utilized}
+                      ₹{report.funds_utilized.toLocaleString()}
                     </p>
                   </div>
                 </div>

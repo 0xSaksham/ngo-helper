@@ -8,6 +8,7 @@ import NGOReportList from "@/app/components/NGOReportList";
 import { SparklesCore } from "@/app/components/ui/sparkles";
 import Link from "next/link";
 import { toast } from "sonner";
+import DownloadPDFButton from "@/app/components/DownloadPDFButton";
 
 export default function Dashboard() {
   const [stats, setStats] = useState<DashboardStats>({
@@ -117,6 +118,9 @@ export default function Dashboard() {
                 onChange={(e) => setSelectedMonth(e.target.value)}
                 className="bg-white/5 border border-white/10 rounded-lg p-2 text-white focus:ring-2 focus:ring-white/20 focus:border-transparent transition-all duration-200"
               />
+              {reports.length > 0 && (
+                <DownloadPDFButton reports={reports} month={selectedMonth} />
+              )}
             </div>
           </div>
 
