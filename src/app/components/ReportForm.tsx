@@ -53,11 +53,12 @@ const ReportForm = ({ onSubmit, isSubmitting }: ReportFormProps) => {
   };
 
   const inputClassName =
-    "w-full bg-white/5 border border-white/10 rounded-lg p-3 text-white placeholder:text-gray-400 focus:ring-2 focus:ring-white/20 focus:border-transparent transition-all duration-200";
-  const labelClassName = "block text-sm font-medium text-gray-200 mb-2";
+    "w-full bg-white/5 border border-white/10 rounded-lg p-2.5 sm:p-3 text-white placeholder:text-gray-400 focus:ring-2 focus:ring-white/20 focus:border-transparent transition-all duration-200 text-sm sm:text-base";
+  const labelClassName =
+    "block text-sm font-medium text-gray-200 mb-1.5 sm:mb-2";
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
       <div>
         <label htmlFor="ngo_id" className={labelClassName}>
           NGO Registration Number
@@ -74,7 +75,7 @@ const ReportForm = ({ onSubmit, isSubmitting }: ReportFormProps) => {
         />
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         <div>
           <label htmlFor="people_helped" className={labelClassName}>
             Number of Beneficiaries
@@ -111,7 +112,7 @@ const ReportForm = ({ onSubmit, isSubmitting }: ReportFormProps) => {
           />
         </div>
 
-        <div>
+        <div className="sm:col-span-2 lg:col-span-1">
           <label htmlFor="funds_utilized" className={labelClassName}>
             Funds Utilized (₹)
           </label>
@@ -148,7 +149,7 @@ const ReportForm = ({ onSubmit, isSubmitting }: ReportFormProps) => {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full bg-gradient-to-r from-blue-500 to-purple-500 text-white py-3 px-6 rounded-lg font-medium hover:opacity-90 transition-opacity duration-200 disabled:opacity-50 disabled:cursor-not-allowed relative overflow-hidden group"
+        className="w-full bg-gradient-to-r from-blue-500 to-purple-500 text-white py-2.5 sm:py-3 px-4 sm:px-6 rounded-lg font-medium hover:opacity-90 transition-opacity duration-200 disabled:opacity-50 disabled:cursor-not-allowed relative overflow-hidden group text-sm sm:text-base"
       >
         <span className="relative z-10">
           {isSubmitting ? "Submitting..." : "Submit Report"}

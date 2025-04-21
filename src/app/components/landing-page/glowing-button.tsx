@@ -11,8 +11,8 @@ export function GlowEffectButton() {
         duration={3}
         scale={0.9}
       />
-      <button className="relative inline-flex items-center gap-1 rounded-md bg-zinc-950 px-2.5 py-1.5  font-bold text-3xl text-zinc-50  outline-1 outline-[#fff2f21f]">
-        Get Started <ArrowRight className="h4 w-8" />
+      <button className="relative inline-flex items-center gap-1 rounded-md bg-zinc-950 px-4 py-2 sm:px-6 sm:py-3 font-bold text-xl sm:text-3xl text-zinc-50 outline-1 outline-[#fff2f21f]">
+        Get Started <ArrowRight className="h-6 w-6 sm:h-8 sm:w-8" />
       </button>
     </div>
   );

@@ -70,7 +70,7 @@ export default function Dashboard() {
   }, [selectedMonth]);
 
   return (
-    <div className="min-h-screen w-full bg-black/90 relative overflow-hidden">
+    <div className="min-h-screen w-full bg-black/90 relative overflow-x-hidden">
       <div className="w-full absolute inset-0">
         <SparklesCore
           id="tsparticlesdashboard"
@@ -84,10 +84,10 @@ export default function Dashboard() {
         />
       </div>
 
-      <div className="relative z-20 container mx-auto px-4 py-8">
-        <div className="backdrop-blur-xl bg-white/10 shadow-2xl rounded-2xl p-8 border border-white/20">
-          <div className="flex justify-between items-center mb-6">
-            <h1 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-neutral-50 to-neutral-400">
+      <div className="relative z-20 container mx-auto px-4 py-4 sm:py-8">
+        <div className="backdrop-blur-xl bg-white/10 shadow-2xl rounded-2xl p-4 sm:p-8 border border-white/20">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-0 mb-6">
+            <h1 className="text-3xl sm:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-neutral-50 to-neutral-400">
               NGO Activity Dashboard
             </h1>
             <nav className="flex gap-4">
@@ -107,20 +107,25 @@ export default function Dashboard() {
           </div>
 
           <div className="mb-8">
-            <div className="flex items-center gap-4">
-              <label htmlFor="month" className="text-gray-300">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+              <label
+                htmlFor="month"
+                className="text-gray-300 whitespace-nowrap"
+              >
                 Select Month:
               </label>
-              <input
-                type="month"
-                id="month"
-                value={selectedMonth}
-                onChange={(e) => setSelectedMonth(e.target.value)}
-                className="bg-white/5 border border-white/10 rounded-lg p-2 text-white focus:ring-2 focus:ring-white/20 focus:border-transparent transition-all duration-200"
-              />
-              {reports.length > 0 && (
-                <DownloadPDFButton reports={reports} month={selectedMonth} />
-              )}
+              <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                <input
+                  type="month"
+                  id="month"
+                  value={selectedMonth}
+                  onChange={(e) => setSelectedMonth(e.target.value)}
+                  className="bg-white/5 border border-white/10 rounded-lg p-2 text-white focus:ring-2 focus:ring-white/20 focus:border-transparent transition-all duration-200 w-full sm:w-auto"
+                />
+                {reports.length > 0 && (
+                  <DownloadPDFButton reports={reports} month={selectedMonth} />
+                )}
+              </div>
             </div>
           </div>
 
@@ -130,7 +135,7 @@ export default function Dashboard() {
             <div className="text-center text-red-400 py-8">{error}</div>
           ) : (
             <>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
                 <StatsCard
                   title="NGOs Reporting"
                   value={stats.totalNgosReporting}
